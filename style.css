@@ -1,0 +1,555 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: vazir;
+    user-select: none;
+}
+body {background-color: #f6f6f6;}
+@font-face {
+    font-family: 'Vazir';
+    src:url('font/vazir/Vazir.eot') format('eot'),
+        url('font/vazir/Vazir.woff') format('woff'),
+        url('font/vazir/Vazir.woff2') format('woff2'),
+        url('font/vazir/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+#header {
+    width: 1280px;
+    background-color: #fff;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 10px #dcdcdc;
+}
+#header > .container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+#header > .container > .top {
+    display: flex;
+    margin-bottom: 60px;
+}
+#header > .container > .top > div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    position: relative;
+}
+#header > .container > .top > .left > div , #header > .container > .top > .right > .ul-cat > div:not(.hr) {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    color: #4b5259;
+    cursor: pointer;
+    white-space: nowrap;
+}
+#header > .container > .top > .right > .ul-cat {
+    display: flex;
+    align-items: center;
+}
+#header > .container > .top > .right > img {margin-right: 20px;}
+#header > .container > .top > .left > div:hover , #header > .container > .top > .right > .ul-cat > div:hover {background-color: #f9f9f9;}
+#header > .container > .top > .left > div > svg {margin: 0 5px;}
+#header > .container > .top > .right {justify-content: space-around;}
+#header > .container > .top > .right > .ul-cat > .hr {
+    width: 1px;
+    height: 24px;
+    background-color: #e0e0e0;
+}
+#header > .container > #ticketInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header > .container > #ticketInfo > div > input {
+    height: 47px;
+    border: 1px solid #bec6cc;
+    outline: none;
+    font-size: 18px;
+    text-align: right;
+    padding-right: 5px ;
+}
+#header > .container > #ticketInfo > div {position: relative;}
+#header > .container > #ticketInfo > div > .label {
+    position: absolute;
+    right: 6%;
+    top: -15%;
+    padding: 0 8px;
+    font-size: 10px;
+    color: #4b5259;
+    background-color: #fff;
+}
+#header > .container > #ticketInfo > div > #maghsad , #header > .container > #ticketInfo > div > #mabda {
+    width: 260px;
+    border-radius: 7px 0 0 7px;
+}
+#header > .container > #ticketInfo > div > #mabda {
+    border-radius: 0 7px 7px 0;
+    border-left: none;
+}
+#content > .container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+#content > .container > .right {
+    width: 300px;
+    height: 750px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    margin-top: 55px;
+    position: sticky;
+    top: 3%;
+}
+#content > .container > .left {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+#content > .container > .left > .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#content > .container > .left > .top > #sortTitle {
+    color: #4b5259;
+    font-size: 20px;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+#content > .container > .left > .top > #sort{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 50px;
+    width: 500px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    margin: 0 10px;
+}
+#content > .container > .left > .top > #sort > label {
+    margin: 0 10px;
+    height: 38px;
+    color: #4b5259;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+}
+#content > .container > .left > .top > #sort > input {display: none;}
+#content > .container > .left > .top > #sort > input:checked + label {
+    color: #0077db;
+    border-bottom: 2px solid #0077db;
+}
+#content > .container > .right > #results {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    height: 50px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #4b5259;
+}
+#content > .container > .right > .incheck > input {display:none;}
+#content > .container > .right > .incheck > input:checked + label {background-image:url("./images/right.png");}
+#content > .container > .right > .incheck > input:checked ~ .content {height:170px;}
+#content > .container > .right > .incheck:nth-child(3) > input:checked ~ .content {height:220px;}
+#content > .container > .right > .incheck > label {
+	display:flex;
+    justify-content: flex-end;
+	background:url("./images/up.png") no-repeat 5% 60%;
+	background-size:25px;
+	cursor:pointer;
+    padding: 10px;
+}
+#content > .container > .right > .incheck > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+	height: 0px;
+	transition:0.5s;
+    position: relative;
+	overflow:hidden;
+    border-bottom: 1px solid #e0e0e0;
+}
+#content > .container > .right > .incheck > .content > input[type=range] {
+    appearance: none;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+#content > .container > .right > .incheck > .content > input[type=range]::-moz-range-thumb {
+    background-image: url(images/range.png);
+    background-size: 100% 100% ;
+    padding: 1px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+#content > .container > .right > .incheck > .content > input[type=range]::-moz-range-progress {
+    background-color: #ff8c00;
+    height: 8px;
+    border-radius: 15px;
+}
+#content > .container > .right > .incheck > .content > h4 {
+    direction: rtl;
+    margin-bottom: -20px;
+}
+#content > .container > .right > .incheck > .content > input[type=checkbox] {display:none;}
+#content > .container > .right > .incheck > .content > input[type=checkbox]:checked + label {
+    background-image:url("./images/checkbox-checked.png");
+	background-size:26px;
+}
+#content > .container > .right > .incheck > .content > label {
+	display:flex;
+    justify-content: flex-end;
+	background:url("./images/checkbox.png") no-repeat 5% 60%;
+	background-size:20px;
+	cursor:pointer;
+    padding: 10px;
+}
+#content > .container > .left > .bottom > .ticket {
+    width: 100%;
+    height: 164px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 15px;
+}
+#content > .container > .left > .bottom > .ticket > .left {
+    width: 30%;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#content > .container > .left > .bottom > .ticket > .left > div {margin: 3px 0;}
+#content > .container > .left > .bottom > .ticket > .left > .price {
+    font-size: 18px;
+    color: #0077db;
+    position: relative;
+    right: -5%;
+}
+#content > .container > .left > .bottom > .ticket > .left > .price::before {
+    content: "تومان";
+    font-size: 13px;
+    color: #4b5259;
+    position: absolute;
+    right: 105%;
+    bottom: 15%;
+}
+#content > .container > .left > .bottom > .ticket > .left > .chair-counter {
+    font-size: 13px;
+    color: #4b5259;
+    direction: rtl;
+}
+#content > .container > .left > .bottom > .ticket > .left > .select-ticket {
+    padding: 8px 35px;
+    border-radius: 10px;
+    background-color: #0077db;
+    cursor: pointer;
+    color: #fff;
+    transition: .4s;
+}
+#content > .container > .left > .bottom > .ticket > .left > .select-ticket:hover {background-color: rgb(0, 86, 158);}
+#content > .container > .left > .bottom > .ticket > .right {
+    width: 70%;
+    position: relative;
+}
+#content > .container > .left > .bottom > .ticket > .right > .companyImg , #selectTicketModal > #modalContainer > #selTicket > .right > .companyImg {
+    width: 50px; 
+    height: 50px;
+    padding: 10px 5px;
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+}
+#content > .container > .left > .bottom > .ticket > .right > .companyName , #selectTicketModal > #modalContainer > #selTicket > .right > .companyName {
+    position: absolute;
+    right: 18%;
+    top: 6%;
+}
+#content > .container > .left > .bottom > .ticket > .right > .busType , #selectTicketModal > #modalContainer > #selTicket > .right > .busType {
+    font-size: 12px;
+    color: #4b5259;
+    padding: 2px 8px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    direction: rtl;
+    position: absolute;
+    right: 68%;
+    top: 5%;
+}
+#content > .container > .left > .bottom > .ticket > .right > .maghsad , #selectTicketModal > #modalContainer > #selTicket > .right > .maghsad  {
+    position: absolute;
+    right: 75%;
+    top: 35%;
+}
+#content > .container > .left > .bottom > .ticket > .right > .mabda , #selectTicketModal > #modalContainer > #selTicket > .right > .mabda {
+    position: absolute;
+    right: 25%;
+    top: 35%;
+}
+#content > .container > .left > .bottom > .ticket > .right > .terminal , #selectTicketModal > #modalContainer > #selTicket > .right > .terminal {
+    position: absolute;
+    right: 25%;
+    bottom: 37%;
+    font-size: 14px;
+    color: #4b5259;
+}
+#content > .container > .left > .bottom > .ticket > .right > .travelImg , #selectTicketModal > #modalContainer > #selTicket > .right > .travelImg {
+    position: absolute;
+    right: 40%;
+    top: 37%;
+    width: 180px;
+    height: 18px;
+}
+#content > .container > .left > .bottom > .ticket > .right > .travelTime , #selectTicketModal > #modalContainer > #selTicket > .right > .travelTime  {
+    position: absolute;
+    right: 15%;
+    top: 35%;
+    font-size: 18px;
+    font-weight: 600;
+}
+#content > .container > .left > .bottom > .ticket > .right > .bottom {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    font-size: 13px;
+    color: #0077db;
+}
+#content > .container > .left > .bottom > .ticket > .right > .bottom > div {cursor: pointer;}
+#selectTicketModal {
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6;
+    position: fixed;
+    left: -500%;
+    top: 0;
+    transition: .4s;
+}
+#selectTicketModal > #modalContainer {
+    width: 1200px;
+    margin: 0 auto;
+}
+#selectTicketModal.showModal {left: 0;}
+#selectTicketModal > #modalContainer > #selTicket {
+    width: 85%;
+    height: 215px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 1px #c9c9c9;
+    display: flex;
+    position: relative;
+}
+#selectTicketModal > #modalContainer > #selTicket > .left {
+    width: 30%;
+    height: 100%;
+    padding-bottom: 50px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#selectTicketModal > #modalContainer > #selTicket > .left > .changeTicket {
+    padding: 5px 50px;
+    border: 2px solid #0077db;
+    color: #0077db;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+#selectTicketModal > #modalContainer > #selTicket > .left > .changeTicket:hover {background-color: #f2f2f2;}
+#selectTicketModal > #modalContainer > #selTicket > .left > div {
+    margin: 10px 0;
+    color: #8f8f8f;
+}
+#selectTicketModal > #modalContainer > #selTicket > .left > div:nth-child(2) {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .companyImg {
+    top: 30%;
+    right: 2%;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .busType {
+    right: 10%;
+    top: 30%;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .companyName {
+    right: 34%;
+    top: 30%;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .maghsad {
+    right: 42%;
+    top: 45%;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .mabda {
+    right: 18%;
+    top: 45%;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .terminal {
+    right: 20%;
+    top: 57%;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .terminal {
+    right: 20%;
+    top: 57%;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .travelImg {
+    right: 25%;
+    top: 47%;
+    width: 150px;
+}
+#selectTicketModal > #modalContainer > #selTicket > .right > .travelTime {
+    right: 11%;
+    top: 45%;
+}
+#selectTicketModal > #modalContainer > #selTicket > #addMyTravel {
+    position: absolute;
+    left: 2%;
+    bottom: -25%;
+    padding: 5px 50px;
+    border: 2px solid #0077db;
+    color: #ffffff;
+    background-color: #0077db;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#selectTicketModal > #modalContainer > #closeModal2 {
+    width: 40px;
+    cursor: pointer;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+}
+#myTravelModal {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    transition: .3s;
+}
+#myTravelModal.showMTDModal {right: 0;}
+#myTravelModal > #modalTravelContainer {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#myTravelModal > #modalTravelContainer > #closeMT {
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+#myTravelModal > #modalTravelContainer > #payment {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    border-radius: 10px;
+    padding: 5px 15px;
+    background-color: #00d37b;
+    transition: .3s;
+    color: #fff;
+    cursor: pointer;
+}
+#myTravelModal > #modalTravelContainer > #payment:hover {background-color: #009456;}
+#myTravelModal > #modalTravelContainer > #myTravelsData {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket {
+    width: 49%;
+    height: 200px;
+    border: 2px solid #000;
+    position: relative;
+    margin: 5px;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > div {position: absolute;}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > .mabda {
+    left: 20px;
+    top: 10px;
+    text-align: center;
+    direction: rtl;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > .maghsad {
+    right: 20px;
+    top: 10px;
+    text-align: center;
+    direction: rtl;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > .companyName {
+    left: 40%;
+    top: 5px;
+    font-size: 24px;
+    text-align: center;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > .travelTime {
+    right: 44%;
+    top: 50px;
+    text-align: center;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > .busType {
+    right: 20px;
+    top: 120px;
+    text-align: center;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > .price {
+    right: 20px;
+    bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+#myTravelModal > #modalTravelContainer > #myTravelsData > .myTicket > .tedad {
+    left: 20px;
+    bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+}
+@media screen and (max-width:1280px)  {
+    #header > .container , #content > .container {width: 100%;}
+    #header , #content {width: 100%;}
+    #selectTicketModal > #modalContainer {width: 100%;}
+    #myTravelModal > #modalTravelContainer {width: 100%;}
+}
+@media screen and (min-width:1280px)  {#header {width: 100%;}}
+@media screen and (max-width:1178px)  {
+    #header > .container > .top > .right > .ul-cat {display: none;}
+    #header > .container > #ticketInfo > div > #maghsad , #header > .container > #ticketInfo > div > #mabda {
+        width: 205px;
+    }
+}
